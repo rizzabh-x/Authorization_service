@@ -8,6 +8,8 @@ const apiRoutes = require('./routes/index');
 // const {User} = require('./models/index');
 // const bcrypt = require('bcrypt');
 
+const db = require('./models/index')
+
 const prepareAndStartServer = () => {
 
     app.use(bodyParser.json());
@@ -17,6 +19,9 @@ const prepareAndStartServer = () => {
 
     app.listen(PORT, () => {
         console.log(`Server Started at PORT:  ${PORT}`); 
+        if(process.env.DB_SYNC){
+            db.sequelize.sync({alter: true})
+        }
     });
 }
 
