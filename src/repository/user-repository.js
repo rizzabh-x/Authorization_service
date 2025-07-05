@@ -7,7 +7,7 @@ class UserRepository {
             const user = await User.create(data);
             return user;
         } catch (error) {
-            console.log("Something went wrong in the user repository layer 1");
+            console.log("Something went wrong in the create user repository layer");
             throw {error};
         }
     }
@@ -20,7 +20,7 @@ class UserRepository {
                 }
             })
         } catch (error) {
-            console.log("Something went wrong in the user repository layer");
+            console.log("Something went wrong in the destroy user repository layer");
             throw {error};           
         }
     }
@@ -32,7 +32,7 @@ class UserRepository {
             });
             return user;
         } catch (error) {
-            console.log("Something went wrong in the user repository layer");
+            console.log("Something went wrong in the get user repository layer");
         }
     }
 
@@ -45,7 +45,7 @@ class UserRepository {
             });
             return user;
         } catch (error) {
-            console.log("Something went wrong on repository layer");
+            console.log("Something went wrong on email repository layer");
             throw error;
         }
     }
@@ -60,7 +60,7 @@ class UserRepository {
             });
             return user.hasRole(adminRole);
         } catch (error) {
-            console.log("Something went wrong on repository layer");
+            console.log("Something went wrong on admin repository layer");
             throw error;
         }
     }
