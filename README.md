@@ -11,8 +11,7 @@ A secure and scalable **Authorization Service** built with Node.js and Express.j
 - 🔐 JWT-based authentication and authorization
 - 👥 User roles and permissions (Admin/User/etc.)
 - 🧾 Secure login and signup endpoints
-- 🔄 Token refresh support (optional)
-- 💾 MongoDB integration via Mongoose
+- 💾 SQL as database
 - 📦 Modular codebase for scalability
 - 🛡️ Middleware for protected routes
 
@@ -25,7 +24,7 @@ Authorization_service/
 ├── config/           # Database and JWT config
 ├── controllers/      # Route logic
 ├── middleware/       # Auth middlewares
-├── models/           # Mongoose models (User, Role, etc.)
+├── models/           # MySQL models (User, Role, etc.)
 ├── routes/           # Auth and user routes
 ├── utils/            # Utility functions (hashing, error handling)
 ├── .env              # Environment variables
@@ -39,7 +38,7 @@ Authorization_service/
 
 - **Backend**: Node.js, Express.js
 - **Auth**: JWT, Bcrypt
-- **Database**: MongoDB (via Mongoose)
+- **Database**: MySql (via sequelize)
 - **Validation**: Express Validator / Custom validation
 - **Environment**: dotenv
 
@@ -50,7 +49,6 @@ Authorization_service/
 ### Prerequisites
 
 - Node.js (v16+ recommended)
-- MongoDB
 
 ### Clone the Repository
 
@@ -71,7 +69,6 @@ Create a `.env` file in the root and add the following:
 
 ```env
 PORT=5000
-MONGO_URI=mongodb://localhost:27017/auth_service
 JWT_SECRET=your_jwt_secret_key
 JWT_EXPIRES_IN=1d
 ```
